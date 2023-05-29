@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('thumb');
             $table->decimal('price', 8, 2);
             $table->string('series')->nullable();
-            $table->date('sale_date');
             $table->string('type');
             $table->timestamps();
         });
