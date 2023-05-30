@@ -13,6 +13,8 @@
                     <h6 class="card-subtitle mb-2 text-muted ">{{$comic->price}}</h6>
                     <p class="card-text">{{$comic->type}}</p>
                     <p class="card-text">{{$comic->series}}</p>
+                    <a class="btn btn-primary" href="{{route('admin.comics.show', $comic->title )}}" role="button">View</a>
+                        <a class="btn btn-secondary" href="{{route('admin.comics.edit', $comic->title )}}" role="button">Edit</a>
                   </div>
                 </div>
             </div>
