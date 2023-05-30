@@ -15,8 +15,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comicsList = Comic::all();
-        dd($comicsList);
+        $comicsList = Comic::orderByDesc('id')->get();
+        //dd($comicsList);
         return view('admin.comics.index', compact('comicsList'));
     }
 
@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        return view('admin.comics.create');
     }
 
     /**
