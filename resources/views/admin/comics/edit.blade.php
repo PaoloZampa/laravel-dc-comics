@@ -12,8 +12,8 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control" name="price" id="price" aria-describedby="helpId"
-                    placeholder="" step="0.01" value="{{ $comic->price }}">
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
+                    placeholder="" value="{{ $comic->price }}">
                 <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <div class="mb-3">
