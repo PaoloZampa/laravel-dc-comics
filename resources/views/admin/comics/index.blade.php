@@ -34,19 +34,19 @@
                                 <a name="" id="" class="btn btn-primary"
                                     href="{{ route('admin.comics.edit', $comic->id) }}" role="button">Edit</a>
 
-                                <a type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modal- {{$comic->id}}">
+                                <a type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="{{$comic->id}}">
                                     Delete
                                 </a>
 
-                                <div class="modal fade" id="{{ $comic->id }}" tabindex="-1" data-bs-backdrop="static"
+                                <div class="modal fade" id="{{$comic->id}}" tabindex="-1" data-bs-backdrop="static"
                                     data-bs-keyboard="false" role="dialog"
-                                    aria-labelledby="modalTitle-{{ $comic->id }}" aria-hidden="true">
+                                    aria-labelledby="modalTitle-{{$comic->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
                                         role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="modalTitle-{{ $comic->id }}">Delete
-                                                    {{ $comic->name }}</h5>
+                                                <h5 class="modal-title" id="modalTitle-{{$comic->id}}">Delete
+                                                    {{$comic->name}}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
