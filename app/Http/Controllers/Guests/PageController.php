@@ -8,8 +8,9 @@ use App\Models\Comic;
 class PageController extends Controller
 {
     public function index()
-    {
-        return view('home');
+    {   
+        $comics = Comic::all();
+        return view('home', compact('comics'));
     }
 
     public function comics()

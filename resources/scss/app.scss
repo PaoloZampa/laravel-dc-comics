@@ -1,1 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+.jumbotron {
+    height: 450px;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+}
