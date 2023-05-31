@@ -14,8 +14,6 @@
                             <p class="card-text">{{ $comic->series }}</p>
                             <a class="btn btn-primary" href="{{ route('admin.comics.show', $comic->id) }}"
                                 role="button">View</a>
-                            <a class="btn btn-secondary" href="{{ route('admin.comics.edit', $comic->id) }}"
-                                role="button">Edit</a>
                         </div>
                     </div>
                 </div>
