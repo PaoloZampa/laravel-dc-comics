@@ -16,6 +16,7 @@
                         <th>IMAGE</th>
                         <th>SERIES</th>
                         <th>TYPE</th>
+                        <th>DESCRIPTION</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
@@ -25,20 +26,21 @@
                             <td scope="row">{{ $comic->id }}</td>
                             <td>{{ $comic->title }}</td>
                             <td>{{ $comic->price }}</td>
-                            <td><img src="{{ $comic->thumb }}" width="100" alt="{{ $comic->title }}"></td>
+                            <td><img src="{{ $comic->thumb }}" width="150" alt="{{ $comic->title }}"></td>
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->type }}</td>
+                            <td>{{ $comic->description }}</td>
                             <td>
-                                <a name="" id="" class="btn btn-success"
+                                <a name="" id="" class="btn btn-success m-2"
                                     href="{{ route('admin.comics.show', $comic->id) }}" role="button">View</a>
-                                <a name="" id="" class="btn btn-primary"
+                                <a name="" id="" class="btn btn-primary m-2"
                                     href="{{ route('admin.comics.edit', $comic->id) }}" role="button">Edit</a>
 
-                                <a type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="{{$comic->id}}">
+                                <button type="button" class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#modal-{{$comic->id}}">
                                     Delete
-                                </a>
+                                </button>
 
-                                <div class="modal fade" id="{{$comic->id}}" tabindex="-1" data-bs-backdrop="static"
+                                <div class="modal fade" id="modal-{{$comic->id}}" tabindex="-1" data-bs-backdrop="static"
                                     data-bs-keyboard="false" role="dialog"
                                     aria-labelledby="modalTitle-{{$comic->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
