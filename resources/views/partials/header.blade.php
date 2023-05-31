@@ -6,34 +6,13 @@
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/comics">Link 1</a>
+                    <a class="nav-link" href="/comics">Comics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contacts">Link 2</a>
+                    <a class="nav-link" href="/contacts">Contacts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 3</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 4</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 5</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 6</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 7</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 8</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 9</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 10</a>
+                    <a class="nav-link" href="/admin/comics">Admin</a>
                 </li>
             </ul>
             <form class="form-inline ml-auto d-flex ms-3">

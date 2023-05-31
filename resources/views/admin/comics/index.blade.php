@@ -1,32 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row row-cols-md-4">
-            @forelse ($comics as $comic)
-                <div class="col my-3">
-                    <div class="card h-100 shadow">
-                        <img src="{{ $comic->thumb }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $comic->title }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted ">{{ $comic->price }}</h6>
-                            <p class="card-text">{{ $comic->type }}</p>
-                            <p class="card-text">{{ $comic->series }}</p>
-                            <a class="btn btn-primary" href="{{ route('admin.comics.show', $comic->id) }}"
-                                role="button">View</a>
-                            <a class="btn btn-secondary" href="{{ route('admin.comics.edit', $comic->id) }}"
-                                role="button">Edit</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="container w-75">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <caption>comics</caption>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                        <th>IMAGE</th>
+                        <th>IN STOCK</th>
+                        <th>WEIGHT</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @forelse ($comics as $comic)
+                        <tr class="table-primary">
+                            <td scope="row">{{ $comic->id }}</td>
+                            <td>{{ $comic->title }}</td>
+                            <td>{{ $comic->price }}</td>
+                            <td><img src="{{ $comic->thumb }}" width="100" alt="{{ $comic->title }}"></td>
+                            <td>{{ $comic->series }}</td>
+                            <td>{{ $comic->type }}</td>
+                            <td>
+                                <a name="" id="" class="btn btn-success"
+                                    href="{{ route('admin.comics.show', $comic->id) }}" role="button">View</a>
+                                <a name="" id="" class="btn btn-primary"
+                                    href="{{ route('admin.comics.edit', $comic->id) }}" role="button">Edit</a>
+                                <!-- Modal trigger button -->
+                                <button type="button" class="btn btn-danger " data-bs-toggle="modal"
+                                    data-bs-target="#{{ $comic->id }}">
+                                    Delete
+                                </button>
 
 
+                            </td>
+                        </tr>
+                    @empty
+                        <tr class="table-primary">
+                            <td scope="row">comics are not in stock</td>
+                        </tr>
+                    @endforelse
 
-            @empty
-                <tr class="">
-                    <td>No results</td>
-                </tr>
-            @endforelse
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
         </div>
     </div>
 @endsection
