@@ -36,8 +36,10 @@
                 <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">description</label>
-                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpId"
+                    placeholder="">
+                <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <button type="submit" class="btn btn-primary">send</button>
         </form>

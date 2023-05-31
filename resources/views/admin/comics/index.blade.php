@@ -11,11 +11,11 @@
                     <caption>comics</caption>
                     <tr>
                         <th>ID</th>
-                        <th>NAME</th>
+                        <th>TITLE</th>
                         <th>PRICE</th>
                         <th>IMAGE</th>
-                        <th>IN STOCK</th>
-                        <th>WEIGHT</th>
+                        <th>SERIES</th>
+                        <th>TYPE</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>

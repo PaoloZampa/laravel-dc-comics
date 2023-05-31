@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container w-25">
-        <form action="{{ route('admin.comics.store') }}" method="post">
+        <form action="{{ route('admin.comics.update', $comic->id) }}" method="post">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -37,8 +37,10 @@
                 <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">description</label>
-                <textarea class="form-control" name="description" id="description" rows="3" value="{{ $comic->description }}"></textarea>
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpId"
+                    placeholder="" value="{{ $comic->description }}">
+                <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <button type="submit" class="btn btn-primary">send</button>
         </form>
