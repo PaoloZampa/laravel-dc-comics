@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ComicController extends Controller
 {
@@ -15,9 +17,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comicsList = Comic::orderByDesc('id')->get();
+        $comics = Comic::orderByDesc('id')->get();
         //dd($comicsList);
-        return view('admin.comics.index', compact('comicsList'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -33,12 +35,22 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        //
+        #dd($request->all());
+        $data = [
+            "title" => $request->title,
+            "description" => $request->description,
+            "thumb" => $request->thumb,
+            "price" => $request->price,
+            "series" => $request->series,
+            "type" => $request->type,
+        ];
+        Comic::create($data);
+        return to_route('admin.comics.index')->with('message', 'added new comic');
     }
 
     /**
@@ -55,7 +67,7 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comic  $comic
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
@@ -66,13 +78,22 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comic  $comic
+     * @param  \App\Http\Requests\UpdateProductRequest  $request
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateProductRequest $request, Comic $comic)
     {
-        //
+        $data = [
+            "title" => $request->title,
+            "description" => $request->description,
+            "thumb" => $request->thumb,
+            "price" => $request->price,
+            "series" => $request->series,
+            "type" => $request->type,
+        ];
+        $comic->update($data);
+        return to_route('admin.comics.index')->with('message', 'Updated');
     }
 
     /**
@@ -83,6 +104,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('admin.comics.index')->with('message', 'Deleted');
     }
 }
