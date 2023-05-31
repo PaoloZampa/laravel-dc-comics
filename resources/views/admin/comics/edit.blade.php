@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title','Add new item')
+
 @section('content')
     <div class="container w-25">
         <form action="{{ route('admin.comics.store') }}" method="post">

@@ -1,7 +1,10 @@
 @extends('layouts.app')
+@section('title', 'ADMIN PAGE')
 
 @section('content')
     <div class="container w-75">
+        <a name="" id="" class="btn btn-primary" href="{{ route('admin.comics.create') }}" role="button">New
+            Product +</a>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead class="table-light">

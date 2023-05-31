@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title',$comic->name)
 @section('content')
     <div class="container w-25">
         <div class="card shadow">

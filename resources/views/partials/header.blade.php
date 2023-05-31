@@ -16,8 +16,8 @@
                 </li>
             </ul>
             <form class="form-inline ml-auto d-flex ms-3">
-                <input class="form-control mr-sm-2 border-0 shadow" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn border-0" type="submit">Search</button>
+                <input class="form-control rounded-0 mr-sm-2 border-0 shadow" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary rounded-0 border-0 shadow" type="submit">Search</button>
             </form>
         </nav>
     </div>
