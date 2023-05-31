@@ -3,9 +3,13 @@
 @section('content')
     @include('partials.jumbotron')
 
-    <div class="bg-dark">
-        <div class="container">
-            <div class="row row-cols-md-6">
+
+    <div class="bg-dark py-2">
+        <div class="container py-3">
+
+            <strong class="bg-primary text-white my_span text-uppercase my-3">current sereis</strong>
+
+            <div class="row row-cols-md-6 my-3">
                 @forelse ($comics as $comic)
                     <div class="col my-2">
                         <div class="card h-100 rounded-0">
@@ -32,4 +36,6 @@
             </div>
         </div>
     </div>
+
+    @include('partials.links')
 @endsection

@@ -1,6 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
 .jumbotron {
     height: 450px;
     background-image: url(../img/jumbotron.jpg);
     background-size: cover;
+}
+
+.home_links {
+    img {
+        aspect-ratio: 1/1;
+        width: 50px;
+    }
+}
+
+.my_span{
+    padding: 0.3rem 1rem;
+    font-size: 2rem;
 }
