@@ -39,8 +39,11 @@ class ComicController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
+
+        $val_data = $request->validated();
+        Comic::create($val_data);
         #dd($request->all());
-        $data = [
+        /*  $data = [
             "title" => $request->title,
             "description" => $request->description,
             "thumb" => $request->thumb,
@@ -48,8 +51,8 @@ class ComicController extends Controller
             "series" => $request->series,
             "type" => $request->type,
         ];
-        Comic::create($data);
-        return to_route('admin.comics.index')->with('message', 'added new comic');
+        Comic::create($data); */
+        return to_route('admin.comics.index');
     }
 
     /**
@@ -83,7 +86,7 @@ class ComicController extends Controller
      */
     public function update(UpdateProductRequest $request, Comic $comic)
     {
-        $data = [
+        /*  $data = [
             "title" => $request->title,
             "description" => $request->description,
             "thumb" => $request->thumb,
@@ -91,8 +94,10 @@ class ComicController extends Controller
             "series" => $request->series,
             "type" => $request->type,
         ];
-        $comic->update($data);
-        return to_route('admin.comics.index')->with('message', 'Updated');
+        $comic->update($data); */
+        $val_data = $request->validated();
+        $comic->update($val_data);
+        return to_route('admin.comics.index');
     }
 
     /**
